@@ -9,26 +9,29 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #ff4e50, #f9d423);
+            color: #fff;
         }
         header {
-            background-color: #333;
+            background: linear-gradient(135deg, #ff4e50, #f9d423);
             color: #fff;
             padding: 20px;
             text-align: center;
         }
         section {
             padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            margin: 10px;
+            border-radius: 10px;
         }
         h2 {
-            color: #333;
+            color: #ffcccb;
         }
         .trainer {
-            background-color: #fff;
+            background: rgba(255, 255, 255, 0.2);
             margin: 10px 0;
             padding: 10px;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         .video-container {
             position: relative;
@@ -37,6 +40,8 @@
             height: 0;
             overflow: hidden;
             margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
         .video-container iframe {
             position: absolute;
@@ -46,8 +51,37 @@
             height: 100%;
             border: 0;
         }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 25px;
+            margin: 20px 0;
+            font-size: 1.2em;
+            color: #fff;
+            background: linear-gradient(135deg, #ff4e50, #f9d423);
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+        .cta-button:hover {
+            background: linear-gradient(135deg, #f9d423, #ff4e50);
+        }
+        .schedule {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .day {
+            background: rgba(255, 255, 255, 0.2);
+            margin: 5px;
+            padding: 10px;
+            border-radius: 5px;
+            width: 120px;
+            text-align: center;
+        }
         footer {
-            background-color: #333;
+            background: linear-gradient(135deg, #ff4e50, #f9d423);
             color: #fff;
             text-align: center;
             padding: 10px;
@@ -61,7 +95,7 @@
     </header>
     <section>
         <h2>Что такое каучук?</h2>
-        <p>Каучук — это искусство гибкости и растяжки, направленное на развитие эластичности тела и улучшение общего физического состояния.</p>
+        <p>Каучук — это искусство гибкости и растяжки, направленное на развитие эластичности тела и улучшение общего физического состояния. Наши тренировки помогут вам достичь новых высот в физическом развитии и обрести гармонию с собственным телом.</p>
     </section>
     <section>
         <h2>Расписание и стоимость занятий</h2>
@@ -75,11 +109,37 @@
             <p><strong>Тренер:</strong> Настя</p>
             <p><strong>Стоимость занятия:</strong> 800 рублей</p>
         </div>
+        <a href="#schedule" class="cta-button">Запишитесь на тренировку сегодня!</a>
     </section>
     <section>
         <h2>Видео с наших тренировок</h2>
         <div class="video-container">
             <iframe src="https://vk.com/video_ext.php?oid=-227453593&id=456239046&hash=472fe094cd8b43d7" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+    </section>
+    <section id="schedule">
+        <h2>Актуальное расписание</h2>
+        <div class="schedule">
+            <div class="day">
+                <h3>Понедельник</h3>
+                <p>Тренер: Настя</p>
+            </div>
+            <div class="day">
+                <h3>Вторник</h3>
+                <p>Тренер: Каролина</p>
+            </div>
+            <div class="day">
+                <h3>Среда</h3>
+                <p>Тренер: Настя</p>
+            </div>
+            <div class="day">
+                <h3>Четверг</h3>
+                <p>Тренер: Каролина</p>
+            </div>
+            <div class="day">
+                <h3>Пятница</h3>
+                <p>Тренер: Настя</p>
+            </div>
         </div>
     </section>
     <footer>
