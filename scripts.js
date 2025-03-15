@@ -1,17 +1,17 @@
-// Плавное появление элементов при скролле
+// Анимация появления секций при скролле
 document.addEventListener('DOMContentLoaded', () => {
-    const fadeElements = document.querySelectorAll('.fade-in');
+    const sections = document.querySelectorAll('section');
 
-    const checkFade = () => {
-        fadeElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            if (elementTop < windowHeight * 0.9) {
-                element.classList.add('visible');
+    const revealSection = () => {
+        const windowHeight = window.innerHeight;
+        sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            if (sectionTop < windowHeight * 0.9) {
+                section.classList.add('visible');
             }
         });
     };
 
-    window.addEventListener('scroll', checkFade);
-    checkFade(); // Проверка при загрузке страницы
+    window.addEventListener('scroll', revealSection);
+    revealSection(); // Проверка при загрузке страницы
 });
