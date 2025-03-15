@@ -1,313 +1,454 @@
-/* Общие стили */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    background: #1A1B2F;
+    background: linear-gradient(to bottom, #0A0B2D, #000000);
     color: #FFFFFF;
     overflow-x: hidden;
+    position: relative;
 }
 
-/* Шапка */
-.header {
+
+/* Шрифты и заголовки */
+h1, h2, h3 {
+    font-family: 'Exo 2', sans-serif;
+    color: #FF00FF;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+h1 {
+    font-size: 3.9rem;
+}
+
+h2 {
+    font-size: 3.25rem;
+    margin-bottom: 40px;
+}
+
+h3 {
+    font-size: 2.34rem;
+    color: #00FFFF;
+    margin-bottom: 20px;
+}
+
+p, ul, li, a, summary, details p {
+    font-size: 1.3rem;
+}
+
+/* Header */
+header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 80px;
-    background: linear-gradient(to right, #1A1B2F, #2E1A47);
-    opacity: 0.8;
+    background: rgba(10, 11, 45, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0 80px;
+    align-items: center;
     z-index: 1000;
 }
 
-.logo {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 32px;
-    background: linear-gradient(to right, #00D4FF, #D500F9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 10px #00D4FF;
+header h1 {
+    font-size: 3.25rem;
 }
 
-.nav a {
-    margin-left: 40px;
+/* Гамбургер-меню */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu a {
     color: #FFFFFF;
     text-decoration: none;
-    font-size: 16px;
+    font-weight: bold;
     transition: color 0.3s;
 }
 
-.nav a:hover {
-    color: #00D4FF;
+.nav-menu a:hover {
+    color: #FFD700;
+    text-shadow: 0 0 5px #FFD700;
 }
 
-.cta-button {
-    padding: 10px 20px;
-    background: linear-gradient(to right, #00D4FF, #D500F9);
-    border-radius: 20px;
+/* Hero Section */
+#hero {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     color: #FFFFFF;
-    text-decoration: none;
-    font-size: 16px;
-    box-shadow: 0 0 10px #D500F9;
-    transition: transform 0.3s;
-}
-
-.cta-button:hover {
-    transform: scale(1.05);
-}
-
-.cta-button.large {
-    width: 300px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Герой-секция */
-.hero {
-    height: 800px;
-    background: url('assets/images/photo_trick_4.jpg') center/cover no-repeat;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
 }
 
-.hero::before {
+#hero::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
 }
 
-.hero-content {
+#hero h2, #hero .btn {
     position: relative;
     z-index: 1;
 }
 
-.hero h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 64px;
-    background: linear-gradient(to right, #00D4FF, #D500F9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 10px #00D4FF;
+#hero h2 {
+    font-size: 4.55rem;
     margin-bottom: 20px;
-    animation: fadeIn 1s ease-out;
+    animation: fadeIn 2s ease-in-out;
 }
 
-.hero p {
-    font-size: 24px;
-    margin-bottom: 40px;
-    animation: fadeIn 1s ease-out 0.5s;
-    animation-fill-mode: both;
-}
-
-/* Разделы */
-section {
-    padding: 60px 80px;
-    position: relative;
-}
-
-h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 40px;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-h2 {
-    color: #00D4FF;
-    text-shadow: 0 0 10px #00D4FF;
-}
-
-/* О нас */
-.about {
-    background: linear-gradient(to bottom, #2E1A47, #1A1B2F);
-}
-
-.about p {
-    max-width: 600px;
-    margin: 0 auto 40px;
-    font-size: 16px;
-}
-
-.video-collage {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-}
-
-.photo-collage {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.photo-collage img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    border: 2px solid #FF4081;
-}
-
-/* Тренеры */
-.coaches {
-    background: #1A1B2F;
-}
-
-.coach-cards {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-}
-
-.coach-card {
-    background: #2E1A47;
-    padding: 20px;
-    border: 2px solid #00D4FF;
-    box-shadow: 0 0 10px #00D4FF;
-    width: 500px;
-    text-align: center;
-}
-
-.coach-card img {
-    width: 200px;
-    height: 300px;
-    object-fit: cover;
-    margin-bottom: 20px;
-}
-
-.coach-card h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 24px;
-    color: #00D4FF;
-}
-
-.coach-card p {
-    font-size: 16px;
-}
-
-.coach-card .price {
-    color: #FF4081;
+.btn {
+    background: linear-gradient(45deg, #FF00FF, #00FFFF);
+    color: #FFFFFF;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 25px;
     font-weight: bold;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1.3rem;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Расписание */
-.schedule {
-    background: #1A1B2F;
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.7);
+    color: #FFFFFF;
 }
 
-.schedule table {
-    width: 50%;
+/* Общие стили для секций */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* About Section */
+#about {
+    background: rgba(10, 11, 45, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.about-content {
+    max-width: 1200px;
     margin: 0 auto;
-    border-collapse: collapse;
+    text-align: left;
 }
 
-.schedule td {
-    padding: 10px;
-    border: 1px solid #00D4FF;
-    text-align: center;
+.about-content h3 {
+    font-size: 1.8rem;
+    color: #00FFFF;
+    margin: 30px 0 15px;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
 }
 
-.schedule p {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-}
-
-/* Отзывы */
-.reviews {
-    background: linear-gradient(to bottom, #2E1A47, #1A1B2F);
-}
-
-.review-carousel {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.review-card {
-    background: #1A1B2F;
-    padding: 20px;
-    width: 400px;
-    border: 2px solid #FF4081;
-    box-shadow: 0 0 10px #FF4081;
-    text-align: center;
-}
-
-.review-card p {
-    font-size: 16px;
-}
-
-.review-card .name {
-    color: #FF4081;
-    margin-top: 10px;
-}
-
-/* Записаться */
-.cta {
-    background: url('assets/images/photo_trick_5.jpg') center/cover no-repeat;
-    text-align: center;
-    position: relative;
-}
-
-.cta::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-}
-
-.cta h2 {
-    position: relative;
-    z-index: 1;
-}
-
-/* Подвал */
-.footer {
-    background: #1A1B2F;
-    height: 100px;
+.about-row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 80px;
+    gap: 30px;
+    margin-bottom: 40px;
 }
 
-.footer a {
-    color: #00D4FF;
+.about-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.about-row p {
+    flex: 1;
+    color: #D3D3D3;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.about-image {
+    flex: 0 0 300px;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    border: 2px solid #FF00FF;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #FF00FF;
+}
+
+/* Удаляем старые стили для about-image-divider */
+.about-image-divider {
+    display: none;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.photo-gallery img {
+    max-width: 300px;
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid #00FFFF;
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00FFFF;
+}
+
+/* Video Section */
+#videos {
+    background: rgba(10, 11, 45, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.video-iframes {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.video-iframes iframe {
+    width: 333px;
+    height: 660px;
+    border-radius: 15px;
+    border: 2px solid #FF00FF;
+    flex-shrink: 0;
+}
+
+/* Schedule & Pricing Sections */
+#schedule, #pricing {
+    background: rgba(10, 11, 45, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    margin: 20px;
+}
+
+#schedule ul, #pricing p {
+    color: #D3D3D3;
+    max-width: 600px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+#schedule ul li {
+    margin: 10px 0;
+}
+
+/* Reviews Section */
+#reviews {
+    background: rgba(10, 11, 45, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.reviews-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.reviews-gallery img {
+    max-width: 390px;
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid #FFD700;
+}
+
+.reviews-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #FFD700;
+}
+
+/* FAQ Section */
+#faq {
+    background: rgba(10, 11, 45, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    margin: 20px;
+}
+
+details {
+    margin: 15px 0;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #00FFFF;
+    padding: 10px;
+}
+
+details p {
+    color: #D3D3D3;
+    padding: 10px;
+}
+
+/* Contacts Section */
+#contacts {
+    background: rgba(10, 11, 45, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    margin: 20px;
+}
+
+#contacts p {
+    margin: 10px 0;
+}
+
+#contacts a {
+    color: #FF00FF;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
-/* Анимации */
+#contacts a:hover {
+    color: #FFD700;
+}
+
+#contacts .btn {
+    display: block;
+    margin: 37.8px auto 0 auto;
+    color: #FFFFFF;
+    width: fit-content;
+}
+
+/* Footer */
+footer {
+    background: rgba(10, 11, 45, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    text-align: center;
+    color: #D3D3D3;
+}
+
+/* Анимация появления */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+section h2, section p, section ul {
+    animation: fadeIn 1s ease-in-out;
 }
 
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
+/* Адаптивность */
+@media (max-width: 768px) {
+    header {
+        position: relative;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 1.625rem;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .nav-menu {
+        display: none;
+        width: 100%;
+    }
+
+    .nav-menu.active {
+        display: block;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    #hero h2 {
+        font-size: 2.6rem;
+    }
+
+    /* Настраиваем iframe для мобильной версии */
+    .video-iframes iframe {
+        width: 266px; /* Уменьшено на 20% от 333px */
+        height: 528px; /* Уменьшено на 20% от 660px */
+    }
+
+    .reviews-gallery img {
+        max-width: 260px;
+    }
+
+    .photo-gallery img {
+        max-width: 200px;
+    }
+
+    #contacts .btn {
+        margin-top: 0;
+    }
+
+    /* Адаптивность для About Section */
+    .about-content {
+        text-align: center;
+    }
+
+    .about-row, .about-row.reverse {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-image {
+        flex: 0 0 auto;
+        max-width: 300px;
+    }
+
+    .about-row p {
+        text-align: center;
+    }
 }
