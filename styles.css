@@ -39,18 +39,22 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 3.9rem;
 }
 
 h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 3.25rem;
+    margin-bottom: 40px;
 }
 
 h3 {
-    font-size: 1.8rem;
+    font-size: 2.34rem;
     color: #00FFFF;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+p, ul, li, a, summary, details p {
+    font-size: 1.3rem;
 }
 
 /* Header */
@@ -68,7 +72,7 @@ header {
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 3.25rem;
 }
 
 nav ul {
@@ -121,25 +125,27 @@ nav a:hover {
 }
 
 #hero h2 {
-    font-size: 3.5rem;
+    font-size: 4.55rem;
     margin-bottom: 20px;
     animation: fadeIn 2s ease-in-out;
 }
 
 .btn {
     background: linear-gradient(45deg, #FF00FF, #00FFFF);
-    color: #FFFFFF;
+    color: #FFFFFF; /* Базовый цвет текста кнопки — белый */
     padding: 15px 30px;
     text-decoration: none;
     border-radius: 25px;
     font-weight: bold;
     font-family: 'Exo 2', sans-serif;
+    font-size: 1.3rem;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .btn:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(255, 0, 255, 0.7);
+    color: #FFFFFF; /* Цвет текста при наведении остаётся белым */
 }
 
 /* Общие стили для секций */
@@ -159,7 +165,8 @@ section {
 #about p {
     color: #D3D3D3;
     max-width: 800px;
-    margin: 0 auto 40px;
+    margin: 0 auto;
+    margin-bottom: 60px;
 }
 
 .photo-gallery {
@@ -167,6 +174,7 @@ section {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    margin-top: 40px;
 }
 
 .photo-gallery img {
@@ -197,7 +205,7 @@ section {
 }
 
 video {
-    max-width: 300px;
+    max-width: 390px; /* Увеличено на 30% (было 300px) */
     border-radius: 15px;
     border: 2px solid #FF00FF;
     transition: box-shadow 0.3s;
@@ -242,7 +250,7 @@ video:hover {
 }
 
 .reviews-gallery img {
-    max-width: 300px;
+    max-width: 390px; /* Увеличено на 30% (было 300px) */
     border-radius: 15px;
     transition: transform 0.3s, box-shadow 0.3s;
     border: 2px solid #FFD700;
@@ -306,6 +314,14 @@ details p {
     color: #FFD700;
 }
 
+/* Стили для кнопки "Записаться на занятие" в секции Contacts */
+#contacts .btn {
+    display: block; /* Убедимся, что кнопка ведёт себя как блочный элемент */
+    margin: 37.8px auto 0 auto; /* Опускаем кнопку на 1 см (37.8px) на обычном экране, центрируем */
+    color: #FFFFFF; /* Базовый цвет текста — белый */
+    width: fit-content; /* Убедимся, что кнопка не растягивается */
+}
+
 /* Footer */
 footer {
     background: rgba(10, 11, 45, 0.8);
@@ -338,10 +354,24 @@ section h2, section p, section ul {
     }
 
     #hero h2 {
-        font-size: 2rem;
+        font-size: 2.6rem;
     }
 
-    .photo-gallery img, .reviews-gallery img, video {
+    /* Увеличение размеров видео и фото-отзывов на мобильных устройствах */
+    video {
+        max-width: 260px; /* Увеличено на 30% (было 200px) */
+    }
+
+    .reviews-gallery img {
+        max-width: 260px; /* Увеличено на 30% (было 200px) */
+    }
+
+    .photo-gallery img {
         max-width: 200px;
+    }
+
+    /* Убираем дополнительный отступ кнопки на мобильных */
+    #contacts .btn {
+        margin-top: 0;
     }
 }
