@@ -407,8 +407,8 @@ section h2, section p, section ul {
     }
 
     .mobile-iframes iframe {
-        width: 333px; /* Фиксированная ширина для каждого iframe */
-        height: 660px; /* Фиксированная высота */
+        width: 266px; /* Уменьшено на 20% от 333px */
+        height: 528px; /* Уменьшено на 20% от 660px */
         border-radius: 15px;
         border: 2px solid #FF00FF;
         flex-shrink: 0; /* Предотвращаем сжатие iframe */
