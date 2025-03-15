@@ -12,6 +12,44 @@ body {
     position: relative;
 }
 
+.cosmic-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.layer1::before,
+.layer2::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* Меняем цвет звезд на золотой (#FFD700) */
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000"><circle cx="50" cy="50" r="3" fill="%23FFD700" opacity="0.9"/><circle cx="150" cy="200" r="2" fill="%23FFD700" opacity="0.7"/><circle cx="300" cy="100" r="4" fill="%23FFD700" opacity="1"/><circle cx="450" cy="500" r="3" fill="%23FFD700" opacity="0.8"/><circle cx="700" cy="300" r="2" fill="%23FFD700" opacity="0.6"/><circle cx="900" cy="800" r="3" fill="%23FFD700" opacity="0.9"/></svg>');
+    background-repeat: repeat;
+    opacity: 0.5;
+    /* Добавляем легкое свечение для золотого эффекта */
+    filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+}
+
+.layer1::before {
+    animation: twinkle 3s infinite;
+}
+
+.layer2::before {
+    animation: twinkle 5s infinite;
+    opacity: 0.3;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+}
 
 /* Шрифты и заголовки */
 h1, h2, h3 {
@@ -415,7 +453,6 @@ section h2, section p, section ul {
         font-size: 2.6rem;
     }
 
-    /* Настраиваем iframe для мобильной версии */
     .video-iframes iframe {
         width: 266px; /* Уменьшено на 20% от 333px */
         height: 528px; /* Уменьшено на 20% от 660px */
@@ -450,5 +487,58 @@ section h2, section p, section ul {
 
     .about-row p {
         text-align: center;
+    }
+
+    /* Новые стили для уменьшения шрифта на 20% в указанных секциях */
+    /* Что такое каучук? (#about) */
+    #about h2 {
+        font-size: 2.6rem; /* 3.25rem * 0.8 */
+    }
+    #about h3 {
+        font-size: 1.44rem; /* 1.8rem * 0.8 */
+    }
+    #about p {
+        font-size: 1.04rem; /* 1.3rem * 0.8 */
+    }
+
+    /* Расписание (#schedule) */
+    #schedule h2 {
+        font-size: 2.6rem; /* 3.25rem * 0.8 */
+    }
+    #schedule h3 {
+        font-size: 1.872rem; /* 2.34rem * 0.8 */
+    }
+    #schedule p,
+    #schedule ul li {
+        font-size: 1.04rem; /* 1.3rem * 0.8 */
+    }
+
+    /* Стоимость (#pricing) */
+    #pricing h2 {
+        font-size: 2.6rem; /* 3.25rem * 0.8 */
+    }
+    #pricing p {
+        font-size: 1.04rem; /* 1.3rem * 0.8 */
+    }
+
+    /* Вдохновляйтесь (#videos) */
+    #videos h2 {
+        font-size: 2.6rem; /* 3.25rem * 0.8 */
+    }
+
+    /* Отзывы (#reviews) */
+    #reviews h2 {
+        font-size: 2.6rem; /* 3.25rem * 0.8 */
+    }
+
+    /* FAQ (#faq) */
+    #faq h2 {
+        font-size: 2.6rem; /* 3.25rem * 0.8 */
+    }
+    #faq summary {
+        font-size: 1.04rem; /* 1.3rem * 0.8 */
+    }
+    #faq details p {
+        font-size: 1.04rem; /* 1.3rem * 0.8 */
     }
 }
