@@ -354,13 +354,22 @@ section h2, section p, section ul {
 /* Адаптивность */
 @media (max-width: 768px) {
     header {
+        position: relative; /* Для корректного позиционирования гамбургер-иконки */
         flex-wrap: wrap;
         gap: 10px;
     }
 
-    /* Показываем кнопку гамбургер-меню */
+    /* Уменьшаем размер текста <h1> в 2 раза */
+    header h1 {
+        font-size: 1.625rem; /* Было 3.25rem, уменьшено в 2 раза */
+    }
+
+    /* Показываем кнопку гамбургер-меню и позиционируем её в правом верхнем углу */
     .menu-toggle {
         display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
     }
 
     /* Скрываем меню по умолчанию */
