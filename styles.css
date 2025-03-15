@@ -2,28 +2,69 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
-    background-color: #FFF;
-    color: #333;
+    background: linear-gradient(to bottom, #0A0B2D, #000000);
+    color: #FFFFFF;
+    overflow-x: hidden;
+    position: relative;
 }
 
+/* Фон со звёздами */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+    opacity: 0.2;
+    z-index: -1;
+    animation: stars 50s linear infinite;
+}
+
+@keyframes stars {
+    0% { background-position: 0 0; }
+    100% { background-position: 1000px 1000px; }
+}
+
+/* Шрифты и заголовки */
 h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-    color: #FFB6C1;
+    font-family: 'Exo 2', sans-serif;
+    color: #FF00FF;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
 }
 
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: #00FFFF;
+    margin-bottom: 15px;
+}
+
+/* Header */
 header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #FFDAB9;
+    background: rgba(10, 11, 45, 0.8);
+    backdrop-filter: blur(10px);
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1000;
 }
 
 header h1 {
@@ -37,15 +78,18 @@ nav ul {
 }
 
 nav a {
-    color: #333;
+    color: #FFFFFF;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #FFB6C1;
+    color: #FFD700;
+    text-shadow: 0 0 5px #FFD700;
 }
 
+/* Hero Section */
 #hero {
     height: 100vh;
     background-size: cover;
@@ -55,49 +99,94 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #FFF;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+#hero h2, #hero .btn {
+    position: relative;
+    z-index: 1;
 }
 
 #hero h2 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .btn {
-    background-color: #FFB6C1;
-    color: #FFF;
-    padding: 10px 20px;
+    background: linear-gradient(45deg, #FF00FF, #00FFFF);
+    color: #FFFFFF;
+    padding: 15px 30px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 25px;
     font-weight: bold;
+    font-family: 'Exo 2', sans-serif;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .btn:hover {
-    background-color: #FAFAD2;
-    color: #333;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.7);
 }
 
+/* Общие стили для секций */
 section {
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
 }
 
-.photo-gallery, .reviews-gallery {
+/* About Section */
+#about {
+    background: rgba(10, 11, 45, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    margin: 20px;
+}
+
+#about p {
+    color: #D3D3D3;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.photo-gallery {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
 
-.photo-gallery img, .reviews-gallery img {
+.photo-gallery img {
     max-width: 300px;
-    border-radius: 10px;
-    transition: transform 0.3s;
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid #00FFFF;
 }
 
-.photo-gallery img:hover, .reviews-gallery img:hover {
+.photo-gallery img:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 15px #00FFFF;
+}
+
+/* Video Section */
+#videos {
+    background: rgba(10, 11, 45, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    margin: 20px;
 }
 
 .video-row {
@@ -109,26 +198,131 @@ section {
 
 video {
     max-width: 300px;
-    border-radius: 10px;
+    border-radius: 15px;
+    border: 2px solid #FF00FF;
+    transition: box-shadow 0.3s;
+}
+
+video:hover {
+    box-shadow: 0 0 15px #FF00FF;
+}
+
+/* Schedule & Pricing Sections */
+#schedule, #pricing {
+    background: rgba(10, 11, 45, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    margin: 20px;
+}
+
+#schedule ul, #pricing p {
+    color: #D3D3D3;
+    max-width: 600px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+#schedule ul li {
+    margin: 10px 0;
+}
+
+/* Reviews Section */
+#reviews {
+    background: rgba(10, 11, 45, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.reviews-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.reviews-gallery img {
+    max-width: 300px;
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid #FFD700;
+}
+
+.reviews-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #FFD700;
+}
+
+/* FAQ Section */
+#faq {
+    background: rgba(10, 11, 45, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    margin: 20px;
 }
 
 details {
-    margin: 10px 0;
+    margin: 15px 0;
     text-align: left;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
 }
 
 summary {
     cursor: pointer;
     font-weight: bold;
+    color: #00FFFF;
+    padding: 10px;
 }
 
+details p {
+    color: #D3D3D3;
+    padding: 10px;
+}
+
+/* Contacts Section */
+#contacts {
+    background: rgba(10, 11, 45, 0.6);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    margin: 20px;
+}
+
+#contacts p {
+    margin: 10px 0;
+}
+
+#contacts a {
+    color: #FF00FF;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#contacts a:hover {
+    color: #FFD700;
+}
+
+/* Footer */
 footer {
-    background-color: #FFDAB9;
+    background: rgba(10, 11, 45, 0.8);
+    backdrop-filter: blur(10px);
     padding: 20px;
     text-align: center;
+    color: #D3D3D3;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section h2, section p, section ul {
+    animation: fadeIn 1s ease-in-out;
 }
 
 /* Адаптивность */
@@ -145,5 +339,9 @@ footer {
 
     #hero h2 {
         font-size: 2rem;
+    }
+
+    .photo-gallery img, .reviews-gallery img, video {
+        max-width: 200px;
     }
 }
