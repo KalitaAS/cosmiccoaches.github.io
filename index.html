@@ -10,126 +10,100 @@
 <body>
     <!-- Шапка -->
     <header class="header">
-        <div class="container">
-            <div class="logo">COSMIC COACHES</div>
-            <nav class="nav">
-                <a href="#about">О нас</a>
-                <a href="#coaches">Тренеры</a>
-                <a href="#schedule">Расписание</a>
-                <a href="#reviews">Отзывы</a>
-                <a href="#cta">Записаться</a>
-            </nav>
-            <a href="https://t.me/your_telegram_channel" class="cta-button">Записаться на занятие</a>
-        </div>
+        <div class="logo">COSMIC COACHES</div>
+        <nav class="nav">
+            <a href="#about">О нас</a>
+            <a href="#coaches">Тренеры</a>
+            <a href="#schedule">Расписание</a>
+            <a href="#reviews">Отзывы</a>
+            <a href="#cta">Записаться</a>
+        </nav>
+        <a href="#cta" class="cta-button">Записаться на занятие</a>
     </header>
 
     <!-- Герой-секция -->
-    <section class="hero" style="background-image: url('assets/images/photo_trick_4.jpg');">
-        <div class="overlay"></div>
-        <div class="container">
-            <h1 class="fade-in">COSMIC COACHES — Стань звездой каучука!</h1>
-            <p class="fade-in">Онлайн-занятия для новичков и профессионалов. Индивидуально и в группах.</p>
-            <a href="https://t.me/your_telegram_channel" class="cta-button fade-in">Записаться на занятие</a>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>COSMIC COACHES — Стань звездой каучука!</h1>
+            <p>Онлайн-занятия для новичков и профессионалов. Индивидуально и в группах.</p>
+            <a href="#cta" class="cta-button large">Записаться на занятие</a>
         </div>
     </section>
 
-    <!-- О нас -->
+    <!-- Раздел "О нас" -->
     <section id="about" class="about">
-        <div class="container">
-            <h2 class="fade-in">Кто мы такие?</h2>
-            <p class="fade-in">
-                COSMIC COACHES — это команда профессионалов, которые помогут тебе освоить каучук с нуля или выйти на новый уровень мастерства. 
-                Мы проводим онлайн-занятия для всех: от новичков, мечтающих о первых трюках, до профессионалов, стремящихся к совершенству. 
-                Наши тренировки — это не только спорт, но и творчество, вдохновение и поддержка. 
-                Присоединяйся к нашей космической команде и открой для себя мир каучука!
-            </p>
-            <div class="video-gallery fade-in">
-                <iframe src="https://vk.com/video_ext.php?oid=-227453593&id=456239027&hash=3ffceffc9989baaa" width="333" height="660" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
-                <iframe src="https://vk.com/video_ext.php?oid=-227453593&id=456239035&hash=d09ed20bf97cc779" width="333" height="660" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
-            </div>
-            <div class="photo-collage fade-in">
-                <img src="assets/images/photo_trick_1.jpg" alt="Trick 1">
-                <img src="assets/images/photo_trick_2.jpg" alt="Trick 2">
-                <img src="assets/images/photo_trick_5.jpg" alt="Trick 5">
+        <h2>Кто мы такие?</h2>
+        <p>COSMIC COACHES — это команда профессионалов, готовых вывести ваши навыки на новый уровень!</p>
+        <div class="video-collage">
+            <iframe src="https://vk.com/video_ext.php?oid=-227453593&id=456239027&hash=3ffceffc9989baaa" width="333" height="660" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            <div class="photo-collage">
+                <img src="assets/images/photo_trick_1.jpg" alt="Photo 1">
+                <img src="assets/images/photo_trick_2.jpg" alt="Photo 2">
+                <img src="assets/images/photo_trick_4.jpg" alt="Photo 3">
             </div>
         </div>
     </section>
 
-    <!-- Тренеры -->
+    <!-- Раздел "Тренеры" -->
     <section id="coaches" class="coaches">
-        <div class="container">
-            <h2 class="fade-in">Наши тренеры</h2>
-            <div class="coach-cards">
-                <div class="coach-card fade-in">
-                    <img src="assets/images/photo_trick_3.jpg" alt="Karolina">
-                    <h3>Каролина</h3>
-                    <p>Эксперт по индивидуальным тренировкам. Стаж 5 лет. Поможет раскрыть твой потенциал!</p>
-                    <p class="price">Индивидуальные занятия — 2000 руб./час</p>
-                </div>
-                <div class="coach-card fade-in">
-                    <img src="assets/images/photo_trick_6.jpg" alt="Nastya">
-                    <h3>Настя</h3>
-                    <p>Мастер групповых тренировок. Создает атмосферу драйва и поддержки!</p>
-                    <p class="price">Групповые занятия — 800 руб./час</p>
-                </div>
+        <h2>Наши тренеры</h2>
+        <div class="coach-cards">
+            <div class="coach-card">
+                <img src="assets/images/photo_trick_3.jpg" alt="Каролина">
+                <h3>Каролина</h3>
+                <p>Опытный тренер с 10-летним стажем.</p>
+                <p class="price">Стоимость: 2000₽/час</p>
+            </div>
+            <div class="coach-card">
+                <img src="assets/images/photo_trick_5.jpg" alt="Настя">
+                <h3>Настя</h3>
+                <p>Специалист по групповым занятиям.</p>
+                <p class="price">Стоимость: 1500₽/час</p>
             </div>
         </div>
     </section>
 
-    <!-- Расписание -->
+    <!-- Раздел "Расписание" -->
     <section id="schedule" class="schedule">
-        <div class="container">
-            <h2 class="fade-in">Расписание занятий</h2>
-            <div class="schedule-table fade-in">
-                <p>Понедельник: 18:00 — Групповые с Настей</p>
-                <p>Вторник: 20:00 — Индивидуальные с Каролиной</p>
-                <p>Среда: 19:00 — Групповые с Настей</p>
-                <p>Четверг: 21:00 — Индивидуальные с Каролиной</p>
-                <p>Пятница: 18:30 — Групповые с Настей</p>
-                <p>Суббота: 10:00 — Индивидуальные с Каролиной</p>
-                <p>Воскресенье: Выходной</p>
-            </div>
-            <p class="note fade-in">Уточняйте актуальное расписание в Telegram!</p>
-        </div>
+        <h2>Расписание занятий</h2>
+        <table>
+            <tr><td>Понедельник</td><td>18:00 - 20:00</td></tr>
+            <tr><td>Среда</td><td>18:00 - 20:00</td></tr>
+            <tr><td>Пятница</td><td>17:00 - 19:00</td></tr>
+        </table>
+        <p>Уточняйте актуальное расписание в Telegram!</p>
     </section>
 
-    <!-- Отзывы -->
+    <!-- Раздел "Отзывы" -->
     <section id="reviews" class="reviews">
-        <div class="container">
-            <h2 class="fade-in">Что говорят наши ученики</h2>
-            <div class="review-carousel fade-in">
-                <div class="review-card">
-                    <p>"Занимаюсь с Каролиной уже 3 месяца, и это просто космос! Никогда не думала, что смогу так круто выполнять трюки. Спасибо за поддержку!"</p>
-                    <span>— Маша</span>
-                </div>
-                <div class="review-card">
-                    <p>"Групповые тренировки с Настей — это заряд энергии! Атмосфера невероятная, все такие разные, но все на одной волне."</p>
-                    <span>— Саша</span>
-                </div>
-                <div class="review-card">
-                    <p>"COSMIC COACHES — это не просто тренировки, это целая тусовка! Уже освоил базовые трюки и иду дальше!"</p>
-                    <span>— Дима</span>
-                </div>
+        <h2>Что говорят наши ученики</h2>
+        <div class="review-carousel">
+            <div class="review-card">
+                <p>Занятия просто огонь! Тренеры супер!</p>
+                <p class="name">Алина</p>
+            </div>
+            <div class="review-card">
+                <p>Улучшила свои навыки за пару недель.</p>
+                <p class="name">Марина</p>
+            </div>
+            <div class="review-card">
+                <p>Рекомендую всем!</p>
+                <p class="name">Ольга</p>
             </div>
         </div>
     </section>
 
-    <!-- Записаться -->
-    <section id="cta" class="cta" style="background-image: url('assets/images/photo_trick_7.jpg');">
-        <div class="overlay"></div>
-        <div class="container">
-            <h2 class="fade-in">Готов стать частью COSMIC COACHES?</h2>
-            <a href="https://t.me/your_telegram_channel" class="cta-button fade-in">Записаться в Telegram</a>
-        </div>
+    <!-- Раздел "Записаться" -->
+    <section id="cta" class="cta">
+        <h2>Готов стать частью COSMIC COACHES?</h2>
+        <a href="https://t.me/cosmiccoaches" class="cta-button large">Записаться в Telegram</a>
     </section>
 
     <!-- Подвал -->
     <footer class="footer">
-        <div class="container">
-            <div class="logo">COSMIC COACHES</div>
-            <a href="https://t.me/your_telegram_channel">Записаться в Telegram</a>
-            <p>© 2025 COSMIC COACHES. Все права защищены.</p>
-        </div>
+        <div class="logo">COSMIC COACHES</div>
+        <a href="https://t.me/cosmiccoaches">Записаться в Telegram</a>
+        <p>© 2025 COSMIC COACHES. Все права защищены.</p>
     </footer>
 
     <script src="scripts.js"></script>
