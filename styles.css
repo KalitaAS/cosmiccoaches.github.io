@@ -75,20 +75,30 @@ header h1 {
     font-size: 3.25rem;
 }
 
-nav ul {
+/* Гамбургер-меню */
+.menu-toggle {
+    display: none; /* Скрыто на десктопе */
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.nav-menu ul {
     list-style: none;
     display: flex;
     gap: 20px;
 }
 
-nav a {
+.nav-menu a {
     color: #FFFFFF;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
 }
 
-nav a:hover {
+.nav-menu a:hover {
     color: #FFD700;
     text-shadow: 0 0 5px #FFD700;
 }
@@ -132,7 +142,7 @@ nav a:hover {
 
 .btn {
     background: linear-gradient(45deg, #FF00FF, #00FFFF);
-    color: #FFFFFF; /* Базовый цвет текста кнопки — белый */
+    color: #FFFFFF;
     padding: 15px 30px;
     text-decoration: none;
     border-radius: 25px;
@@ -145,7 +155,7 @@ nav a:hover {
 .btn:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(255, 0, 255, 0.7);
-    color: #FFFFFF; /* Цвет текста при наведении остаётся белым */
+    color: #FFFFFF;
 }
 
 /* Общие стили для секций */
@@ -205,7 +215,7 @@ section {
 }
 
 video {
-    max-width: 390px; /* Увеличено на 30% (было 300px) */
+    max-width: 390px;
     border-radius: 15px;
     border: 2px solid #FF00FF;
     transition: box-shadow 0.3s;
@@ -250,7 +260,7 @@ video:hover {
 }
 
 .reviews-gallery img {
-    max-width: 390px; /* Увеличено на 30% (было 300px) */
+    max-width: 390px;
     border-radius: 15px;
     transition: transform 0.3s, box-shadow 0.3s;
     border: 2px solid #FFD700;
@@ -316,10 +326,10 @@ details p {
 
 /* Стили для кнопки "Записаться на занятие" в секции Contacts */
 #contacts .btn {
-    display: block; /* Убедимся, что кнопка ведёт себя как блочный элемент */
-    margin: 37.8px auto 0 auto; /* Опускаем кнопку на 1 см (37.8px) на обычном экране, центрируем */
-    color: #FFFFFF; /* Базовый цвет текста — белый */
-    width: fit-content; /* Убедимся, что кнопка не растягивается */
+    display: block;
+    margin: 37.8px auto 0 auto;
+    color: #FFFFFF;
+    width: fit-content;
 }
 
 /* Footer */
@@ -344,33 +354,58 @@ section h2, section p, section ul {
 /* Адаптивность */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
+        flex-wrap: wrap;
         gap: 10px;
     }
 
-    nav ul {
+    /* Показываем кнопку гамбургер-меню */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Скрываем меню по умолчанию */
+    .nav-menu {
+        display: none;
+        width: 100%;
+    }
+
+    /* Показываем меню, когда добавлен класс active */
+    .nav-menu.active {
+        display: block;
+    }
+
+    .nav-menu ul {
         flex-direction: column;
         gap: 10px;
+        padding: 10px 0;
     }
 
     #hero h2 {
         font-size: 2.6rem;
     }
 
-    /* Увеличение размеров видео и фото-отзывов на мобильных устройствах */
+    /* Видео на мобильных устройствах */
     video {
-        max-width: 260px; /* Увеличено на 30% (было 200px) */
+        max-width: 260px;
+        border-radius: 15px;
+        border: 2px solid #FF00FF;
+    }
+
+    /* Добавляем controls для мобильных устройств */
+    @media (max-width: 768px) {
+        video {
+            controls: true;
+        }
     }
 
     .reviews-gallery img {
-        max-width: 260px; /* Увеличено на 30% (было 200px) */
+        max-width: 260px;
     }
 
     .photo-gallery img {
         max-width: 200px;
     }
 
-    /* Убираем дополнительный отступ кнопки на мобильных */
     #contacts .btn {
         margin-top: 0;
     }
