@@ -437,10 +437,13 @@ section h2, section p, section ul {
     .nav-menu {
         display: none;
         width: 100%;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
     }
 
     .nav-menu.active {
         display: block;
+        opacity: 1;
     }
 
     .nav-menu ul {
@@ -489,7 +492,7 @@ section h2, section p, section ul {
         text-align: center;
     }
 
-    /* Новые стили для уменьшения шрифта на 20% в указанных секциях */
+    /* Уменьшение шрифта на 20% в указанных секциях */
     /* Что такое каучук? (#about) */
     #about h2 {
         font-size: 2.6rem; /* 3.25rem * 0.8 */
