@@ -1,6 +1,14 @@
-// Обработчик для гамбургер-меню
-document.querySelector('.menu-toggle').addEventListener('click', () => {
-    document.querySelector('.nav-menu').classList.toggle('active');
-    const toggleBtn = document.querySelector('.menu-toggle');
-    toggleBtn.textContent = toggleBtn.textContent === '☰' ? '✕' : '☰';
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (!menuToggle || !navMenu) {
+        console.error('Menu toggle or nav menu not found');
+        return;
+    }
+
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        menuToggle.textContent = menuToggle.textContent === '☰' ? '✕' : '☰';
+    });
 });
