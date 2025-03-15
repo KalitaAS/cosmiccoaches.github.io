@@ -207,26 +207,20 @@ section {
     margin: 20px;
 }
 
-.video-row {
+.video-iframes {
     display: flex;
+    flex-direction: row;
     overflow-x: auto;
     gap: 20px;
     padding: 20px 0;
 }
 
-video {
-    max-width: 390px;
+.video-iframes iframe {
+    width: 333px;
+    height: 660px;
     border-radius: 15px;
     border: 2px solid #FF00FF;
-    transition: box-shadow 0.3s;
-}
-
-video:hover {
-    box-shadow: 0 0 15px #FF00FF;
-}
-
-.mobile-iframes {
-    display: none; /* Скрываем iframe по умолчанию (для десктопов) */
+    flex-shrink: 0;
 }
 
 /* Schedule & Pricing Sections */
@@ -392,26 +386,10 @@ section h2, section p, section ul {
         font-size: 2.6rem;
     }
 
-    /* Скрываем видео в мобильной версии */
-    .video-row {
-        display: none;
-    }
-
-    /* Настраиваем iframe для горизонтальной прокрутки в мобильной версии */
-    .mobile-iframes {
-        display: flex;
-        flex-direction: row; /* Горизонтальный ряд */
-        overflow-x: auto; /* Горизонтальная прокрутка */
-        gap: 20px;
-        padding: 20px 0;
-    }
-
-    .mobile-iframes iframe {
+    /* Настраиваем iframe для мобильной версии */
+    .video-iframes iframe {
         width: 266px; /* Уменьшено на 20% от 333px */
         height: 528px; /* Уменьшено на 20% от 660px */
-        border-radius: 15px;
-        border: 2px solid #FF00FF;
-        flex-shrink: 0; /* Предотвращаем сжатие iframe */
     }
 
     .reviews-gallery img {
