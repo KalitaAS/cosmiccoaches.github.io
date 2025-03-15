@@ -397,21 +397,21 @@ section h2, section p, section ul {
         display: none;
     }
 
-    /* Показываем iframe в мобильной версии */
+    /* Настраиваем iframe для горизонтальной прокрутки в мобильной версии */
     .mobile-iframes {
         display: flex;
-        flex-direction: column;
+        flex-direction: row; /* Горизонтальный ряд */
+        overflow-x: auto; /* Горизонтальная прокрутка */
         gap: 20px;
         padding: 20px 0;
     }
 
     .mobile-iframes iframe {
-        width: 100%; /* Адаптивная ширина */
-        max-width: 333px; /* Максимальная ширина как в исходном коде */
+        width: 333px; /* Фиксированная ширина для каждого iframe */
         height: 660px; /* Фиксированная высота */
         border-radius: 15px;
         border: 2px solid #FF00FF;
-        margin: 0 auto; /* Центрирование */
+        flex-shrink: 0; /* Предотвращаем сжатие iframe */
     }
 
     .reviews-gallery img {
