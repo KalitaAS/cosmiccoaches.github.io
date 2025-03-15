@@ -1,3 +1,4 @@
+/* Общие стили */
 * {
     margin: 0;
     padding: 0;
@@ -11,39 +12,34 @@ body {
     overflow-x: hidden;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 /* Шапка */
 .header {
     position: fixed;
+    top: 0;
     width: 100%;
-    background: linear-gradient(180deg, #1A1B2F 0%, rgba(46, 26, 71, 0.8) 100%);
-    padding: 20px 0;
-    z-index: 1000;
-}
-
-.header .container {
+    height: 80px;
+    background: linear-gradient(to right, #1A1B2F, #2E1A47);
+    opacity: 0.8;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 80px;
+    z-index: 1000;
 }
 
 .logo {
     font-family: 'Orbitron', sans-serif;
-    font-size: 24px;
-    background: linear-gradient(90deg, #00D4FF 0%, #D500F9 100%);
+    font-size: 32px;
+    background: linear-gradient(to right, #00D4FF, #D500F9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px #00D4FF;
 }
 
 .nav a {
+    margin-left: 40px;
     color: #FFFFFF;
     text-decoration: none;
-    margin-left: 30px;
     font-size: 16px;
     transition: color 0.3s;
 }
@@ -54,25 +50,31 @@ body {
 
 .cta-button {
     padding: 10px 20px;
-    background: linear-gradient(90deg, #00D4FF 0%, #D500F9 100%);
+    background: linear-gradient(to right, #00D4FF, #D500F9);
+    border-radius: 20px;
     color: #FFFFFF;
     text-decoration: none;
-    border-radius: 25px;
     font-size: 16px;
-    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px #D500F9;
+    transition: transform 0.3s;
 }
 
 .cta-button:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
+}
+
+.cta-button.large {
+    width: 300px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Герой-секция */
 .hero {
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
+    height: 800px;
+    background: url('assets/images/photo_trick_4.jpg') center/cover no-repeat;
     position: relative;
     display: flex;
     align-items: center;
@@ -80,7 +82,8 @@ body {
     text-align: center;
 }
 
-.hero .overlay {
+.hero::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -89,106 +92,102 @@ body {
     background: rgba(0, 0, 0, 0.3);
 }
 
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
 .hero h1 {
     font-family: 'Orbitron', sans-serif;
     font-size: 64px;
-    background: linear-gradient(90deg, #00D4FF 0%, #D500F9 100%);
+    background: linear-gradient(to right, #00D4FF, #D500F9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px #00D4FF;
     margin-bottom: 20px;
+    animation: fadeIn 1s ease-out;
 }
 
 .hero p {
     font-size: 24px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease-out 0.5s;
+    animation-fill-mode: both;
 }
 
-.hero .cta-button {
-    padding: 15px 30px;
-    font-size: 18px;
+/* Разделы */
+section {
+    padding: 60px 80px;
+    position: relative;
 }
 
-/* О нас */
-.about {
-    padding: 80px 0;
-    background: linear-gradient(180deg, #2E1A47 0%, #1A1B2F 100%);
-}
-
-.about h2 {
+h2 {
     font-family: 'Orbitron', sans-serif;
     font-size: 40px;
-    color: #00D4FF;
-    margin-bottom: 30px;
-}
-
-.about p {
-    font-size: 16px;
-    line-height: 1.6;
-    max-width: 600px;
-    margin-bottom: 40px;
-}
-
-.video-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-bottom: 40px;
-}
-
-.video-gallery iframe {
-    border: 2px solid #00D4FF;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
-}
-
-.photo-collage {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.photo-collage img {
-    max-width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
-}
-
-/* Тренеры */
-.coaches {
-    padding: 80px 0;
-    background: #1A1B2F;
-}
-
-.coaches h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 40px;
-    color: #D500F9;
     text-align: center;
     margin-bottom: 40px;
 }
 
+h2 {
+    color: #00D4FF;
+    text-shadow: 0 0 10px #00D4FF;
+}
+
+/* О нас */
+.about {
+    background: linear-gradient(to bottom, #2E1A47, #1A1B2F);
+}
+
+.about p {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    font-size: 16px;
+}
+
+.video-collage {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.photo-collage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.photo-collage img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border: 2px solid #FF4081;
+}
+
+/* Тренеры */
+.coaches {
+    background: #1A1B2F;
+}
+
 .coach-cards {
     display: flex;
-    gap: 40px;
     justify-content: center;
-    flex-wrap: wrap;
+    gap: 40px;
 }
 
 .coach-card {
     background: #2E1A47;
     padding: 20px;
-    border-radius: 10px;
+    border: 2px solid #00D4FF;
+    box-shadow: 0 0 10px #00D4FF;
+    width: 500px;
     text-align: center;
-    width: 300px;
-    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
 }
 
 .coach-card img {
-    width: 100%;
-    height: 200px;
+    width: 200px;
+    height: 300px;
     object-fit: cover;
-    border-radius: 10px;
     margin-bottom: 20px;
 }
 
@@ -200,7 +199,6 @@ body {
 
 .coach-card p {
     font-size: 16px;
-    margin: 10px 0;
 }
 
 .coach-card .price {
@@ -210,86 +208,65 @@ body {
 
 /* Расписание */
 .schedule {
-    padding: 80px 0;
     background: #1A1B2F;
 }
 
-.schedule h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 40px;
-    color: #00D4FF;
+.schedule table {
+    width: 50%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.schedule td {
+    padding: 10px;
+    border: 1px solid #00D4FF;
     text-align: center;
-    margin-bottom: 40px;
 }
 
-.schedule-table {
-    text-align: center;
-}
-
-.schedule-table p {
-    font-size: 16px;
-    margin: 10px 0;
-}
-
-.schedule .note {
-    font-size: 14px;
+.schedule p {
     text-align: center;
     margin-top: 20px;
+    font-size: 14px;
 }
 
 /* Отзывы */
 .reviews {
-    padding: 80px 0;
-    background: linear-gradient(180deg, #2E1A47 0%, #1A1B2F 100%);
-}
-
-.reviews h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 40px;
-    color: #D500F9;
-    text-align: center;
-    margin-bottom: 40px;
+    background: linear-gradient(to bottom, #2E1A47, #1A1B2F);
 }
 
 .review-carousel {
     display: flex;
-    gap: 20px;
     justify-content: center;
-    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .review-card {
     background: #1A1B2F;
     padding: 20px;
-    border-radius: 10px;
-    width: 300px;
+    width: 400px;
+    border: 2px solid #FF4081;
+    box-shadow: 0 0 10px #FF4081;
     text-align: center;
-    box-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
 }
 
 .review-card p {
     font-size: 16px;
-    margin-bottom: 10px;
 }
 
-.review-card span {
+.review-card .name {
     color: #FF4081;
-    font-weight: bold;
+    margin-top: 10px;
 }
 
 /* Записаться */
 .cta {
-    height: 400px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: url('assets/images/photo_trick_5.jpg') center/cover no-repeat;
     text-align: center;
+    position: relative;
 }
 
-.cta .overlay {
+.cta::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -299,32 +276,18 @@ body {
 }
 
 .cta h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 40px;
-    background: linear-gradient(90deg, #00D4FF 0%, #D500F9 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 30px;
-}
-
-.cta .cta-button {
-    padding: 15px 30px;
-    font-size: 18px;
+    position: relative;
+    z-index: 1;
 }
 
 /* Подвал */
 .footer {
-    padding: 20px 0;
     background: #1A1B2F;
-    text-align: center;
-}
-
-.footer .container {
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
+    padding: 0 80px;
 }
 
 .footer a {
@@ -332,67 +295,19 @@ body {
     text-decoration: none;
 }
 
-.footer p {
-    font-size: 14px;
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Анимации */
-.fade-in {
+section {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.fade-in.visible {
+section.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* Звезды на фоне */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><circle cx="10" cy="10" r="1" fill="white" opacity="0.5"/></svg>') repeat;
-    opacity: 0.1;
-    z-index: -1;
-    animation: twinkle 5s infinite;
-}
-
-@keyframes twinkle {
-    0%, 100% { opacity: 0.1; }
-    50% { opacity: 0.3; }
-}
-
-/* Мобильная адаптация */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .nav {
-        display: none;
-    }
-
-    .video-gallery iframe {
-        width: 100%;
-        height: auto;
-    }
-
-    .coach-cards, .review-carousel {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer .container {
-        flex-direction: column;
-        text-align: center;
-    }
 }
