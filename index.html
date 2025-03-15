@@ -3,139 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COSMIC COACHES - Тренировки по каучуку</title>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <title>COSMIC COACHES</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <h1>COSMIC COACHES</h1>
-        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="#about">О каучуке</a></li>
-                <li><a href="#schedule">Расписание</a></li>
-                <li><a href="#pricing">Стоимость</a></li>
-                <li><a href="#reviews">Отзывы</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contacts">Контакты</a></li>
-            </ul>
-        </nav>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">COSMIC COACHES</div>
+            <nav class="nav">
+                <a href="#about">О нас</a>
+                <a href="#coaches">Тренеры</a>
+                <a href="#schedule">Расписание</a>
+                <a href="#reviews">Отзывы</a>
+                <a href="#cta">Записаться</a>
+            </nav>
+            <a href="https://t.me/your_telegram_channel" class="cta-button">Записаться на занятие</a>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero" style="background-image: url('assets/images/photo_trick_8.jpg')">
-        <h2>COSMIC COACHES: Раскрой свою гибкость!</h2>
-        <a href="https://t.me/Karolina_Koblova" class="btn">Записаться</a>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <h2>Что такое каучук?</h2>
-        <p>Каучук (contortion) — это искусство экстремальной гибкости. Наши тренеры помогут вам раскрыть потенциал вашего тела!</p>
-        <div class="photo-gallery">
-            <img src="assets/images/photo_trick_1.jpg" alt="Photo 1">
-            <img src="assets/images/photo_trick_2.jpg" alt="Photo 2">
-            <img src="assets/images/photo_trick_3.jpg" alt="Photo 3">
-            <img src="assets/images/photo_trick_4.jpg" alt="Photo 4">
-            <img src="assets/images/photo_trick_5.jpg" alt="Photo 5">
-            <img src="assets/images/photo_trick_6.jpg" alt="Photo 6">
-            <img src="assets/images/photo_trick_7.jpg" alt="Photo 7">
-            <img src="assets/images/photo_trick_8.jpg" alt="Photo 8">
-            <img src="assets/images/photo_trick_9.jpg" alt="Photo 9">
+    <!-- Герой-секция -->
+    <section class="hero" style="background-image: url('assets/images/photo_trick_4.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+            <h1 class="fade-in">COSMIC COACHES — Стань звездой каучука!</h1>
+            <p class="fade-in">Онлайн-занятия для новичков и профессионалов. Индивидуально и в группах.</p>
+            <a href="https://t.me/your_telegram_channel" class="cta-button fade-in">Записаться на занятие</a>
         </div>
     </section>
 
-    <!-- Video Section -->
-    <section id="videos">
-        <h2>Вдохновляйтесь!</h2>
-        <div class="video-iframes">
-            <iframe src="https://vk.com/video_ext.php?oid=-227453593&id=456239027&hash=3ffceffc9989baaa" width="333" height="660" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
-            <iframe src="https://vk.com/video_ext.php?oid=-227453593&id=456239035&hash=d09ed20bf97cc779" width="333" height="660" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
-            <iframe src="https://vk.com/video_ext.php?oid=-227453593&id=456239039&hash=ebee546616cbb31c" width="333" height="660" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
-            <iframe src="https://vk.com/video_ext.php?oid=-227453593&id=456239048&hash=b7d92d882273fd55" width="333" height="660" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
-            <iframe src="https://vk.com/video_ext.php?oid=-227453593&id=456239046&hash=472fe094cd8b43d7" width="333" height="660" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
-            <iframe src="https://vk.com/video_ext.php?oid=-227453593&id=456239057&hash=ba140fac79b80923" width="333" height="660" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
-            <iframe src="https://vk.com/video_ext.php?oid=-227453593&id=456239044&hash=55420bee76dd0597" width="333" height="660" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    <!-- О нас -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="fade-in">Кто мы такие?</h2>
+            <p class="fade-in">
+                COSMIC COACHES — это команда профессионалов, которые помогут тебе освоить каучук с нуля или выйти на новый уровень мастерства. 
+                Мы проводим онлайн-занятия для всех: от новичков, мечтающих о первых трюках, до профессионалов, стремящихся к совершенству. 
+                Наши тренировки — это не только спорт, но и творчество, вдохновение и поддержка. 
+                Присоединяйся к нашей космической команде и открой для себя мир каучука!
+            </p>
+            <div class="video-gallery fade-in">
+                <iframe src="https://vk.com/video_ext.php?oid=-227453593&id=456239027&hash=3ffceffc9989baaa" width="333" height="660" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                <iframe src="https://vk.com/video_ext.php?oid=-227453593&id=456239035&hash=d09ed20bf97cc779" width="333" height="660" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            </div>
+            <div class="photo-collage fade-in">
+                <img src="assets/images/photo_trick_1.jpg" alt="Trick 1">
+                <img src="assets/images/photo_trick_2.jpg" alt="Trick 2">
+                <img src="assets/images/photo_trick_5.jpg" alt="Trick 5">
+            </div>
         </div>
     </section>
 
-    <!-- Schedule Section -->
-    <section id="schedule">
-        <h2>Расписание</h2>
-        <h3>Групповые тренировки (Настя)</h3>
-        <ul>
-            <li>17 марта, Понедельник, 18:00</li>
-            <li>20 марта, Четверг, 16:00</li>
-            <li>23 марта, Воскресенье, 17:00</li>
-        </ul>
-        <h3>Индивидуальные тренировки (Каролина)</h3>
-        <p>Свободные окна для брони:</p>
-        <ul>
-            <li>17 марта, Понедельник, 14:00</li>
-            <li>19 марта, Среда, 16:00</li>
-            <li>20 марта, Четверг, 16:00</li>
-            <li>22 марта, Суббота, 18:00</li>
-        </ul>
-        <p>Запись через Telegram: <a href="https://t.me/Karolina_Koblova">@Karolina_Koblova</a></p>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing">
-        <h2>Стоимость</h2>
-        <p>Групповые тренировки (Настя): 800 руб/час</p>
-        <p>Индивидуальные тренировки (Каролина): 2000 руб/час</p>
-    </section>
-
-    <!-- Reviews Section -->
-    <section id="reviews">
-        <h2>Отзывы</h2>
-        <div class="reviews-gallery">
-            <img src="assets/images/review_1.jpg" alt="Review 1">
-            <img src="assets/images/review_2.jpg" alt="Review 2">
-            <img src="assets/images/review_3.jpg" alt="Review 3">
-            <img src="assets/images/review_4.jpg" alt="Review 4">
+    <!-- Тренеры -->
+    <section id="coaches" class="coaches">
+        <div class="container">
+            <h2 class="fade-in">Наши тренеры</h2>
+            <div class="coach-cards">
+                <div class="coach-card fade-in">
+                    <img src="assets/images/photo_trick_3.jpg" alt="Karolina">
+                    <h3>Каролина</h3>
+                    <p>Эксперт по индивидуальным тренировкам. Стаж 5 лет. Поможет раскрыть твой потенциал!</p>
+                    <p class="price">Индивидуальные занятия — 2000 руб./час</p>
+                </div>
+                <div class="coach-card fade-in">
+                    <img src="assets/images/photo_trick_6.jpg" alt="Nastya">
+                    <h3>Настя</h3>
+                    <p>Мастер групповых тренировок. Создает атмосферу драйва и поддержки!</p>
+                    <p class="price">Групповые занятия — 800 руб./час</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section id="faq">
-        <h2>FAQ</h2>
-        <details>
-            <summary>Что такое каучук?</summary>
-            <p>Каучук (contortion) — это искусство экстремальной гибкости, которое сочетает элементы гимнастики, йоги и танца. Это не только тренировка тела, но и способ раскрыть внутреннюю грацию.</p>
-        </details>
-        <details>
-            <summary>Нужна ли подготовка?</summary>
-            <p>Нет, мы работаем с любым уровнем подготовки! Наши тренеры адаптируют программу под ваши возможности.</p>
-        </details>
-        <details>
-            <summary>Что взять с собой на тренировку?</summary>
-            <p>Удобную одежду (лосины, топ), коврик, бутылку воды и хорошее настроение!</p>
-        </details>
-        <details>
-            <summary>А вдруг у меня не получится?</summary>
-            <p>Не переживайте! Мы работаем в вашем темпе, и каждый делает то, что может. Главное — желание учиться и пробовать.</p>
-        </details>
-        <details>
-            <summary>А вдруг я сломаюсь?</summary>
-            <p>Наши тренеры — профессионалы с большим опытом. Все упражнения выполняются с учетом вашей подготовки и под строгим контролем, чтобы исключить травмы.</p>
-        </details>
+    <!-- Расписание -->
+    <section id="schedule" class="schedule">
+        <div class="container">
+            <h2 class="fade-in">Расписание занятий</h2>
+            <div class="schedule-table fade-in">
+                <p>Понедельник: 18:00 — Групповые с Настей</p>
+                <p>Вторник: 20:00 — Индивидуальные с Каролиной</p>
+                <p>Среда: 19:00 — Групповые с Настей</p>
+                <p>Четверг: 21:00 — Индивидуальные с Каролиной</p>
+                <p>Пятница: 18:30 — Групповые с Настей</p>
+                <p>Суббота: 10:00 — Индивидуальные с Каролиной</p>
+                <p>Воскресенье: Выходной</p>
+            </div>
+            <p class="note fade-in">Уточняйте актуальное расписание в Telegram!</p>
+        </div>
     </section>
 
-    <!-- Contacts Section -->
-    <section id="contacts">
-        <h2>Контакты</h2>
-        <p><a href="https://vk.com/cosmic_coaches">VK</a></p>
-        <p><a href="https://www.instagram.com/cosmic_coaches/">Instagram</a></p>
-        <p><a href="https://t.me/karolina_yoga">Telegram</a></p>
-        <a href="https://t.me/Karolina_Koblova" class="btn">Записаться на занятие</a>
+    <!-- Отзывы -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2 class="fade-in">Что говорят наши ученики</h2>
+            <div class="review-carousel fade-in">
+                <div class="review-card">
+                    <p>"Занимаюсь с Каролиной уже 3 месяца, и это просто космос! Никогда не думала, что смогу так круто выполнять трюки. Спасибо за поддержку!"</p>
+                    <span>— Маша</span>
+                </div>
+                <div class="review-card">
+                    <p>"Групповые тренировки с Настей — это заряд энергии! Атмосфера невероятная, все такие разные, но все на одной волне."</p>
+                    <span>— Саша</span>
+                </div>
+                <div class="review-card">
+                    <p>"COSMIC COACHES — это не просто тренировки, это целая тусовка! Уже освоил базовые трюки и иду дальше!"</p>
+                    <span>— Дима</span>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 COSMIC COACHES</p>
+    <!-- Записаться -->
+    <section id="cta" class="cta" style="background-image: url('assets/images/photo_trick_7.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+            <h2 class="fade-in">Готов стать частью COSMIC COACHES?</h2>
+            <a href="https://t.me/your_telegram_channel" class="cta-button fade-in">Записаться в Telegram</a>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="logo">COSMIC COACHES</div>
+            <a href="https://t.me/your_telegram_channel">Записаться в Telegram</a>
+            <p>© 2025 COSMIC COACHES. Все права защищены.</p>
+        </div>
     </footer>
 
     <script src="scripts.js"></script>
