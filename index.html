@@ -3,164 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COSMIC COACHES - Тренировки по каучуку</title>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Моё солнышко</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Dancing Script', cursive;
+            background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+            color: #333;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Контейнер для сердечек */
+        .hearts-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Чтобы сердечки не мешали взаимодействию */
+            z-index: -1; /* Фон позади контента */
+        }
+
+        /* Стили для сердечек */
+        .heart {
+            position: absolute;
+            color: #ff69b4;
+            font-size: 20px;
+            opacity: 0.3;
+            animation: fall 10s linear infinite;
+        }
+
+        /* Анимация падения сердечек */
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            max-width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 1; /* Контент поверх сердечек */
+        }
+
+        .text {
+            font-size: 20px;
+            padding: 0 10px;
+            margin-bottom: 30px;
+        }
+
+        .photo-gallery {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 10px 0;
+            scroll-behavior: smooth;
+        }
+
+        .photo {
+            display: inline-block;
+            width: 150px;
+            height: 200px;
+            margin-right: 10px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .photo-gallery::-webkit-scrollbar {
+            display: none;
+        }
+
+        .photo-gallery {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        @media (max-width: 480px) {
+            .photo {
+                width: 120px;
+                height: 160px;
+            }
+            .text {
+                font-size: 18px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <h1>COSMIC COACHES</h1>
-        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="#about">О каучуке</a></li>
-                <li><a href="#schedule">Расписание</a></li>
-                <li><a href="#pricing">Стоимость</a></li>
-                <li><a href="#reviews">Отзывы</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contacts">Контакты</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="hero" style="background-image: url('assets/images/photo_trick_7.jpg')">
-        <h2>COSMIC COACHES</h2>
-	<h2>Раскрой свою гибкость!</h2>
-        <a href="https://t.me/Karolina_Koblova" class="btn">Записаться</a>
-    </section>
-
-<!-- About Section -->
-<section id="about">
-    <h2>Что такое каучук?</h2>
-    <div class="about-content">  
-        <div class="about-row">
-		<div> 
-	    <h3>История и традиции</h3>
-            <p>Каучук, или конторсия (contortion) — это завораживающее искусство, которое позволяет телу принимать самые невероятные формы, демонстрируя гибкость, силу и баланс. Еще в древние времена конторсионисты поражали публику своими навыками, выступая в театральных труппах и на ритуальных церемониях. В Азии, например, в Монголии и Китае, это искусство стало частью культуры: традиционные буддийские танцы Цам сопровождаются элементами конторсии, а в Монголии оно даже приобрело национальное значение. Здесь детей начинают обучать с пяти лет, и сегодня монгольские артисты каучука покоряют мировые сцены.</p>
-		</div>
-            <div class="about-image">
-                <img src="assets/images/photo_trick_2.jpg" alt="Photo 2">
-            </div>
+    <div class="hearts-background" id="hearts"></div>
+    <div class="container">
+        <div class="text">
+            Моё любимое солнышко! Сегодня особенный день — ровно полгода, как ты вошёл в мою жизнь и сделал её такой полной. 
+            Эти шесть месяцев были словно тёплый свет, который ты приносишь каждый день — твоя улыбка, твоя забота, твой смех, 
+            который я обожаю. Ты даже не представляешь, как сильно я ценю каждую минуту с тобой. Ты — мой дом, мой уют, мой человек, 
+            с которым я чувствую себя настоящей. Спасибо за то, что ты рядом, за то, как ты обнимаешь меня, когда мне нужно тепло, 
+            и как заставляешь меня смеяться, даже если день был тяжёлым. Я так скучаю по тебе, когда ты в командировках, 
+            и жду каждой нашей встречи, как чуда. Люблю тебя больше всего на свете — твои глаза, твой голос, твою доброту. 
+            Ты моё счастье, и я так счастлива, что эти полгода — только начало нашей истории. Ты — лучшее, что со мной случилось.
         </div>
 
-        
-        <div class="about-row">
-            <div class="about-image">
-                <img src="assets/images/photo_trick_3.jpg" alt="Photo 3">
-            </div>
-		<div>
-		<h3>Каучук в современности</h3>
-            <p> Сегодня каучук — это не только цирковое искусство, но и доступный каждому способ раскрыть потенциал своего тела. На концертах, выставках и в клубах проводятся мероприятия, где супергибкие артисты вдохновляют нас поверить в свои возможности.</p>
-	</div>
-        </div>
-
-        
-        <div class="about-row">
- <div>
-<h3>Путь к гармонии</h3>
-            <p>Каучук — это не просто трюки, это путь к гармонии тела и разума. Каждый может начать с нуля и шаг за шагом открывать новые грани своей гибкости, прорабатывая мышцы и углубляясь в себя. Прогресс неизбежен, если заниматься с любовью к себе и своему телу. Это искусство не только вдохновляет, но и преображает, даря удовольствие от каждого нового достижения.</p>
- </div>
-            <div class="about-image">
-                <img src="assets/images/photo_trick_5.jpg" alt="Photo 5">
-            </div>
+        <div class="photo-gallery" id="gallery">
+            <img class="photo" src="photo/1.jpg" alt="Фото 1">
+            <img class="photo" src="photo/2.jpg" alt="Фото 2">
+            <img class="photo" src="photo/3.jpg" alt="Фото 3">
+            <img class="photo" src="photo/4.jpg" alt="Фото 4">
+            <img class="photo" src="photo/5.jpg" alt="Фото 5">
+            <img class="photo" src="photo/6.jpg" alt="Фото 6">
         </div>
     </div>
-</section>
 
- 
-    <!-- Schedule Section -->
-    <section id="schedule">
-        <h2>Расписание</h2>
-        <h3>Групповые тренировки (Настя)</h3>
-        <ul>
-            <li>17 марта, Понедельник, 18:00</li>
-            <li>20 марта, Четверг, 16:00</li>
-            <li>23 марта, Воскресенье, 17:00</li>
-        </ul>
-        <h3>Индивидуальные тренировки (Каролина)</h3>
-        <p>Свободные окна для брони:</p>
-        <ul>
-            <li>17 марта, Понедельник, 14:00</li>
-            <li>19 марта, Среда, 16:00</li>
-            <li>20 марта, Четверг, 16:00</li>
-            <li>22 марта, Суббота, 18:00</li>
-        </ul>
-        <p>Запись через Telegram: <a href="https://t.me/Karolina_Koblova">@Karolina_Koblova</a></p>
-    </section>
+    <script>
+        // Генерация сердечек
+        const heartsContainer = document.getElementById('hearts');
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '♥';
+            heart.style.left = Math.random() * 100 + 'vw'; // Случайная позиция по горизонтали
+            heart.style.animationDuration = (Math.random() * 5 + 5) + 's'; // Случайная длительность от 5 до 10 секунд
+            heartsContainer.appendChild(heart);
 
-    <!-- Pricing Section -->
-    <section id="pricing">
-        <h2>Стоимость</h2>
-        <p>Групповые тренировки (Настя): 800 руб/час</p>
-        <p>Индивидуальные тренировки (Каролина): 2000 руб/час</p>
-    </section>
+            // Удаляем сердечко после завершения анимации
+            setTimeout(() => {
+                heart.remove();
+            }, 10000); // Соответствует максимальной длительности анимации
+        }
 
- 
-   <!-- Video Section -->
-    <section id="videos">
-        <h2>Вдохновляйтесь!</h2>
-        <div class="video-iframes">
-            <iframe src="https://vk.com/video_ext.php?oid=-227453593&id=456239027&hash=3ffceffc9989baaa" width="333" height="660" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
-            <iframe src="https://vk.com/video_ext.php?oid=-227453593&id=456239035&hash=d09ed20bf97cc779" width="333" height="660" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
-            <iframe src="https://vk.com/video_ext.php?oid=-227453593&id=456239039&hash=ebee546616cbb31c" width="333" height="660" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
-            <iframe src="https://vk.com/video_ext.php?oid=-227453593&id=456239048&hash=b7d92d882273fd55" width="333" height="660" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
-            <iframe src="https://vk.com/video_ext.php?oid=-227453593&id=456239046&hash=472fe094cd8b43d7" width="333" height="660" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
-            <iframe src="https://vk.com/video_ext.php?oid=-227453593&id=456239057&hash=ba140fac79b80923" width="333" height="660" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
-            <iframe src="https://vk.com/video_ext.php?oid=-227453593&id=456239044&hash=55420bee76dd0597" width="333" height="660" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
-        </div>
-    </section>
+        // Создаём сердечки каждые 300мс
+        setInterval(createHeart, 300);
 
+        // Автоскроллинг галереи
+        const gallery = document.getElementById('gallery');
+        let scrollAmount = 0;
+        const scrollStep = 1;
+        const scrollInterval = 20;
 
-   <!-- Reviews Section -->
-    <section id="reviews">
-        <h2>Отзывы</h2>
-        <div class="reviews-gallery">
-            <img src="assets/images/review_1.jpg" alt="Review 1">
-            <img src="assets/images/review_2.jpg" alt="Review 2">
-            <img src="assets/images/review_3.jpg" alt="Review 3">
-            <img src="assets/images/review_4.jpg" alt="Review 4">
-        </div>
-    </section>
+        function autoScroll() {
+            scrollAmount += scrollStep;
+            gallery.scrollLeft = scrollAmount;
 
+            if (scrollAmount >= gallery.scrollWidth - gallery.clientWidth) {
+                scrollAmount = 0;
+            }
+        }
 
+        setInterval(autoScroll, scrollInterval);
 
-    <!-- FAQ Section -->
-    <section id="faq">
-        <h2>FAQ</h2>
-        <details>
-            <summary>Нужна ли подготовка?</summary>
-            <p>Нет, мы работаем с любым уровнем подготовки! Наши тренеры адаптируют программу под ваши возможности.</p>
-        </details>
-        <details>
-            <summary>Что взять с собой на тренировку?</summary>
-            <p>Удобную одежду (лосины, топ), коврик, бутылку воды и хорошее настроение!</p>
-        </details>
-        <details>
-            <summary>А вдруг у меня не получится?</summary>
-            <p>Не переживайте! Мы работаем в вашем темпе, и каждый делает то, что может. Главное — желание учиться и пробовать.</p>
-        </details>
-        <details>
-            <summary>А вдруг я сломаюсь?</summary>
-            <p>Наши тренеры — профессионалы с большим опытом. Все упражнения выполняются с учетом вашей подготовки и под строгим контролем, чтобы исключить травмы.</p>
-        </details>
-    </section>
+        gallery.addEventListener('touchstart', () => {
+            clearInterval(autoScroll);
+        });
 
-    <!-- Contacts Section -->
-    <section id="contacts">
-        <h2>Контакты</h2>
-        <p><a href="https://vk.com/cosmic_coaches">VK</a></p>
-        <p><a href="https://www.instagram.com/cosmic_coaches/">Instagram</a></p>
-        <p><a href="https://t.me/karolina_yoga">Telegram</a></p>
-        <a href="https://t.me/Karolina_Koblova" class="btn">Записаться на занятие</a>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 COSMIC COACHES</p>
-    </footer>
-
-    <script src="scripts.js"></script>
+        gallery.addEventListener('touchend', () => {
+            setInterval(autoScroll, scrollInterval);
+        });
+    </script>
 </body>
 </html>
