@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Моё солнышко</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 20px;
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Lobster', cursive;
             background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
             color: #333;
             line-height: 1.6;
@@ -17,18 +17,16 @@
             overflow-x: hidden;
         }
 
-        /* Контейнер для сердечек */
         .hearts-background {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none; /* Чтобы сердечки не мешали взаимодействию */
-            z-index: -1; /* Фон позади контента */
+            pointer-events: none;
+            z-index: -1;
         }
 
-        /* Стили для сердечек */
         .heart {
             position: absolute;
             color: #ff69b4;
@@ -37,7 +35,6 @@
             animation: fall 10s linear infinite;
         }
 
-        /* Анимация падения сердечек */
         @keyframes fall {
             0% {
                 transform: translateY(-100px) rotate(0deg);
@@ -53,30 +50,45 @@
             max-width: 100%;
             text-align: center;
             position: relative;
-            z-index: 1; /* Контент поверх сердечек */
+            z-index: 1;
         }
 
         .text {
-            font-size: 20px;
+            font-size: 24px;
             padding: 0 10px;
             margin-bottom: 30px;
         }
 
         .photo-gallery {
-            overflow-x: auto;
+            overflow-x: hidden; /* Убрал скроллбар */
             white-space: nowrap;
             padding: 10px 0;
-            scroll-behavior: smooth;
+            position: relative;
+        }
+
+        .photo-container {
+            display: inline-block;
+            animation: scroll 20s linear infinite; /* Плавная анимация в одну сторону */
         }
 
         .photo {
-            display: inline-block;
             width: 150px;
             height: 200px;
             margin-right: 10px;
             background: #f0f0f0;
             border-radius: 10px;
             object-fit: cover;
+            vertical-align: top;
+        }
+
+        /* Анимация скроллинга */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
         }
 
         .photo-gallery::-webkit-scrollbar {
@@ -94,7 +106,7 @@
                 height: 160px;
             }
             .text {
-                font-size: 18px;
+                font-size: 20px;
             }
         }
     </style>
@@ -113,59 +125,40 @@
         </div>
 
         <div class="photo-gallery" id="gallery">
-            <img class="photo" src="photo/1.jpg" alt="Фото 1">
-            <img class="photo" src="photo/2.jpg" alt="Фото 2">
-            <img class="photo" src="photo/3.jpg" alt="Фото 3">
-            <img class="photo" src="photo/4.jpg" alt="Фото 4">
-            <img class="photo" src="photo/5.jpg" alt="Фото 5">
-            <img class="photo" src="photo/6.jpg" alt="Фото 6">
+            <div class="photo-container">
+                <img class="photo" src="photo/1.jpg" alt="Фото 1">
+                <img class="photo" src="photo/2.jpg" alt="Фото 2">
+                <img class="photo" src="photo/3.jpg" alt="Фото 3">
+                <img class="photo" src="photo/4.jpg" alt="Фото 4">
+                <img class="photo" src="photo/5.jpg" alt="Фото 5">
+                <img class="photo" src="photo/6.jpg" alt="Фото 6">
+                <!-- Дублируем фото для бесконечного эффекта -->
+                <img class="photo" src="photo/1.jpg" alt="Фото 1">
+                <img class="photo" src="photo/2.jpg" alt="Фото 2">
+                <img class="photo" src="photo/3.jpg" alt="Фото 3">
+                <img class="photo" src="photo/4.jpg" alt="Фото 4">
+                <img class="photo" src="photo/5.jpg" alt="Фото 5">
+                <img class="photo" src="photo/6.jpg" alt="Фото 6">
+            </div>
         </div>
     </div>
 
     <script>
-        // Генерация сердечек
         const heartsContainer = document.getElementById('hearts');
         function createHeart() {
             const heart = document.createElement('div');
             heart.className = 'heart';
             heart.innerHTML = '♥';
-            heart.style.left = Math.random() * 100 + 'vw'; // Случайная позиция по горизонтали
-            heart.style.animationDuration = (Math.random() * 5 + 5) + 's'; // Случайная длительность от 5 до 10 секунд
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
             heartsContainer.appendChild(heart);
 
-            // Удаляем сердечко после завершения анимации
             setTimeout(() => {
                 heart.remove();
-            }, 10000); // Соответствует максимальной длительности анимации
+            }, 10000);
         }
 
-        // Создаём сердечки каждые 300мс
         setInterval(createHeart, 300);
-
-        // Автоскроллинг галереи
-        const gallery = document.getElementById('gallery');
-        let scrollAmount = 0;
-        const scrollStep = 1;
-        const scrollInterval = 20;
-
-        function autoScroll() {
-            scrollAmount += scrollStep;
-            gallery.scrollLeft = scrollAmount;
-
-            if (scrollAmount >= gallery.scrollWidth - gallery.clientWidth) {
-                scrollAmount = 0;
-            }
-        }
-
-        setInterval(autoScroll, scrollInterval);
-
-        gallery.addEventListener('touchstart', () => {
-            clearInterval(autoScroll);
-        });
-
-        gallery.addEventListener('touchend', () => {
-            setInterval(autoScroll, scrollInterval);
-        });
     </script>
 </body>
 </html>
