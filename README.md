@@ -2,6 +2,9 @@
 
 
 
+
+
+
 # Оценка презентаций
 
 Веб-приложение, созданное для оценки презентаций с помощью моделей машинного обучения. Приложение поддерживает загрузку презентаций в форматах PPTX или PDF, анализ их содержания, структуры и шрифтов (для PPTX), а также генерацию отчетов в форматах DOCX и PDF.
@@ -76,21 +79,31 @@
 
 ### Запуск в Docker
 1. Сборка Docker-образа 
-`docker build -t pe-ml .`
+```
+docker build -t pe-ml .
+```
 
 2. Запуск контейнера Docker
-`docker run -d -p 80:8501 -e OPENAI_API_KEY=$OPENAI_API_KEY pe-ml`
+```
+docker run -d -p 80:8501 -e OPENAI_API_KEY=$OPENAI_API_KEY pe-ml
+```
 
 3. Откройте приложение по адресу
-`http://localhost`.
+```
+http://localhost
+```
  
 
 ### Запуск тестов для приложения
 1. Создание виртуального окружения
-`python3 -m venv env`
+```
+python3 -m venv env
+```
 
 2. Активация виртуального окружения
-`source env/bin/activate`
+```
+source env/bin/activate
+```
 
 3. Установка/обновление зависимостей
 ```
@@ -99,13 +112,19 @@ pip install -U -r backend/requirements.txt
 pip install -U -r tests/requirements.txt
 ```
 4. Запуск тестов
-`coverage run -m pytest -v -s`
+```
+coverage run -m pytest -v -s
+```
 
 5. Запуск flake8
-`flake8 || echo`
+```
+flake8 || echo
+```
 
 6. Деактивация виртуального окружения
-`deactivate`
+```
+deactivate
+```
 
 
 ## Использование
